@@ -20,8 +20,13 @@ struct MainScreenView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+            // TODO: This is a Dummy Button, Remove or Change this in future
             Button("Fetch movie") {
                 viewModel.printResponse()
+            }
+            // TODO: This is a Dummy Button, Remove or Change this in future
+            Button("Search movie") {
+                viewModel.searchMovie()
             }
         }
         .padding()

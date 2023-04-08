@@ -20,6 +20,7 @@
 		9D061FC929E1807D00E7A2C6 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D061FC829E1807D00E7A2C6 /* MoviesService.swift */; };
 		9D061FCB29E1855E00E7A2C6 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D061FCA29E1855E00E7A2C6 /* MainScreenViewModel.swift */; };
 		9D061FCE29E1911500E7A2C6 /* Dictionary<String, String>+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D061FCD29E1911500E7A2C6 /* Dictionary<String, String>+Extensions.swift */; };
+		9D7FE9AB29E1BAF200599FA6 /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FE9AA29E1BAF200599FA6 /* SearchResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		9D061FC829E1807D00E7A2C6 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		9D061FCA29E1855E00E7A2C6 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		9D061FCD29E1911500E7A2C6 /* Dictionary<String, String>+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary<String, String>+Extensions.swift"; sourceTree = "<group>"; };
+		9D7FE9AA29E1BAF200599FA6 /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				9D061FBF29E166D600E7A2C6 /* Movie.swift */,
+				9D7FE9AA29E1BAF200599FA6 /* SearchResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				9D061FC529E16A5A00E7A2C6 /* HTTPClient.swift in Sources */,
 				9D061FC929E1807D00E7A2C6 /* MoviesService.swift in Sources */,
 				9D061FC329E167A800E7A2C6 /* Endpoint.swift in Sources */,
+				9D7FE9AB29E1BAF200599FA6 /* SearchResponseModel.swift in Sources */,
 				9D061FBC29E162AA00E7A2C6 /* HTTPMethod.swift in Sources */,
 				9D061FCE29E1911500E7A2C6 /* Dictionary<String, String>+Extensions.swift in Sources */,
 				9D061FC029E166D600E7A2C6 /* Movie.swift in Sources */,
