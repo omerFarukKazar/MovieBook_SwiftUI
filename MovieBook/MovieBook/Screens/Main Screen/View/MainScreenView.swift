@@ -7,20 +7,33 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainScreenView: View {
+    let viewModel: MainScreenViewModel
+
+    init(viewModel: MainScreenViewModel) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+            Button("Fetch movie") {
+                viewModel.printResponse()
+            }
         }
         .padding()
     }
+
+
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let service = MoviesService()
+        let viewModel = MainScreenViewModel(service: service)
+        MainScreenView(viewModel: viewModel)
     }
 }
