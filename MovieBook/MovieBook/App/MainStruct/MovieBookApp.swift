@@ -11,7 +11,9 @@ import SwiftUI
 struct MovieBookApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let service = MoviesService()
+            let viewModel = MainScreenViewModel(service: service)
+            MainScreenView(viewModel: viewModel)
         }
     }
 }
