@@ -11,6 +11,7 @@ import Foundation
 enum MoviesEndpoint {
     case withID(_ id: String)
     case withTitle(_ title: String)
+    case searchWith(_ title: String)
 }
 
 extension MoviesEndpoint: Endpoint {
@@ -29,6 +30,8 @@ extension MoviesEndpoint: Endpoint {
             return ["i": id].toQuery
         case .withTitle(let title):
             return ["t": title].toQuery
+        case .searchWith(let title):
+            return ["s": title].toQuery
         }
     }
 }
