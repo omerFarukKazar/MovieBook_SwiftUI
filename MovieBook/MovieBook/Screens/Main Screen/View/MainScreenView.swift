@@ -8,31 +8,49 @@
 import SwiftUI
 
 struct MainScreenView: View {
-    let viewModel: MainScreenViewModel
+    // MARK: - Properties
+    @ObservedObject var viewModel: MainScreenViewModel
+    @State var searchTextInput: String = ""
 
+    // MARK: - Init
     init(viewModel: MainScreenViewModel) {
         self.viewModel = viewModel
     }
 
+    // MARK: - Body
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            // TODO: This is a Dummy Button, Remove or Change this in future
-            Button("Fetch movie") {
-                viewModel.printResponse()
+        NavigationView {
+            VStack {
+                TextField("Type to search",
+                          text: $searchTextInput)
+                .onChange(of: searchTextInput) { newValue in
+                    if newValue.count > 2 {
+                        self.viewModel.searchMovieBy(title: newValue)
+                    }
+                }
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                List(viewModel.searchResults,
+                     id: \.imdbID) { movie in
+                    HStack {
+                        MBFetchedImageView(url: movie.poster)
+                            .frame(width: 100,
+                                   height: 150)
+
+                        VStack(alignment: .leading) {
+                            Text(movie.title)
+                                .foregroundColor(.blue)
+                            Text(movie.year)
+                                .foregroundColor(.orange)
+                        }
+                    }
+                }
             }
-            // TODO: This is a Dummy Button, Remove or Change this in future
-            Button("Search movie") {
-                viewModel.searchMovie()
-            }
+            .navigationTitle(Text("MovieBook"))
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
     }
-
-
 }
 
 struct ContentView_Previews: PreviewProvider {
