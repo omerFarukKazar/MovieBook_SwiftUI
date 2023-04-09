@@ -16,7 +16,7 @@ protocol MoviesServiceable {
      - returns: Returns a **Result** with either **Movie** or a **RequestError**.
      - warning: While building url, appended **apikey** at the end of the url manually as query item.
      */
-    func getMovieByID(_ id: String) async -> Result<Movie,
+    func fetchMovieByID(_ id: String) async -> Result<Movie,
                                                   RequestError>
     /**
      Sends a fetch movie request with the desired movie's **title**.
@@ -26,7 +26,7 @@ protocol MoviesServiceable {
      - returns: Returns a **Result** with either **Movie** or a **RequestError**.
      - warning: While building url, appended **apikey** at the end of the url manually as query item.
      */
-    func getMovieByTitle(_ title: String) async -> Result<Movie,
+    func fetchMovieByTitle(_ title: String) async -> Result<Movie,
                                                         RequestError>
 
     /**
@@ -37,24 +37,24 @@ protocol MoviesServiceable {
      - returns: Returns a **Result** with either **SearchResponse** or a **RequestError**.
      - warning: While building url, appended **apikey** at the end of the url manually as query item.
      */
-    func searchMovieBy(title: String) async -> Result<SearchResponseModel,
+    func searchMovieBy(_ title: String) async -> Result<SearchResponseModel,
                                                      RequestError>
 
 }
 
 struct MoviesService: HTTPClient, MoviesServiceable {
 
-    func getMovieByID(_ id: String) async -> Result<Movie, RequestError> {
+    func fetchMovieByID(_ id: String) async -> Result<Movie, RequestError> {
         return await sendRequest(endpoint: MoviesEndpoint.withID(id),
                                  responseModel: Movie.self)
     }
 
-    func getMovieByTitle(_ title: String) async -> Result<Movie, RequestError> {
+    func fetchMovieByTitle(_ title: String) async -> Result<Movie, RequestError> {
         return await sendRequest(endpoint: MoviesEndpoint.withTitle(title),
                                  responseModel: Movie.self)
     }
 
-    func searchMovieBy(title: String) async -> Result<SearchResponseModel, RequestError> {
+    func searchMovieBy(_ title: String) async -> Result<SearchResponseModel, RequestError> {
         return await sendRequest(endpoint: MoviesEndpoint.searchWith(title),
                                  responseModel: SearchResponseModel.self)
     }

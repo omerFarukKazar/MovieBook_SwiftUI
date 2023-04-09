@@ -7,39 +7,40 @@
 
 import Foundation
 
-struct MainScreenViewModel {
+class MainScreenViewModel: ObservableObject {
     // MARK: Properties
     let service: MoviesServiceable
+    @Published var searchResults: [Search] = []
 
     // MARK: Init
     init(service: MoviesServiceable) {
         self.service = service
     }
 
-    // MARK: Methods
-    // TODO: This is a Dummy Method, Remove or Change this in future
-    func printResponse() {
+    // TODO: Dummy method to test API Call. Remove or Update in the future.
+    func fetchMovie(by id: String) {
         Task(priority: .background) {
-          let result = await service.getMovieByID("tt3896198")
-          switch result {
-          case .success(let movieResponse):
-              print(movieResponse)
-          case .failure(let error):
-              print(error)
-          }
+            let result = await service.fetchMovieByID(id)
+            switch result {
+            case .success(let movieResponse):
+                print(movieResponse)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     
-    // TODO: This is a Dummy Method, Remove or Change this in future
-    func searchMovie() {
+    func searchMovieBy(title: String) {
         Task(priority: .background) {
-          let result = await service.searchMovieBy(title: "James")
-          switch result {
-          case .success(let movieResponse):
-              print(movieResponse)
-          case .failure(let error):
-              print(error)
-          }
+            let result = await service.searchMovieBy(title)
+            switch result {
+            case .success(let movieResponse):
+                DispatchQueue.main.async {
+                    self.searchResults = movieResponse.search
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }

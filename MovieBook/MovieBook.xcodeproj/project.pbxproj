@@ -21,6 +21,8 @@
 		9D061FCB29E1855E00E7A2C6 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D061FCA29E1855E00E7A2C6 /* MainScreenViewModel.swift */; };
 		9D061FCE29E1911500E7A2C6 /* Dictionary<String, String>+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D061FCD29E1911500E7A2C6 /* Dictionary<String, String>+Extensions.swift */; };
 		9D7FE9AB29E1BAF200599FA6 /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FE9AA29E1BAF200599FA6 /* SearchResponseModel.swift */; };
+		9D7FE9B029E1D1E200599FA6 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7FE9AF29E1D1E200599FA6 /* DataDownloader.swift */; };
+		9D8E765029E339E80044AFE2 /* MBFetchedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E764F29E339E80044AFE2 /* MBFetchedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		9D061FCA29E1855E00E7A2C6 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		9D061FCD29E1911500E7A2C6 /* Dictionary<String, String>+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary<String, String>+Extensions.swift"; sourceTree = "<group>"; };
 		9D7FE9AA29E1BAF200599FA6 /* SearchResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
+		9D7FE9AF29E1D1E200599FA6 /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
+		9D8E764F29E339E80044AFE2 /* MBFetchedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFetchedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		9D061FA929E15ED200E7A2C6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				9D8E764D29E339B70044AFE2 /* MBKit */,
 				9D061FCC29E1910D00E7A2C6 /* Extensions */,
 				9D061FA029E15D9C00E7A2C6 /* Preview Content */,
 				9D061FB129E15F4A00E7A2C6 /* Assets */,
@@ -126,9 +131,8 @@
 		9D061FAD29E15F1600E7A2C6 /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
-				9D061FB829E1625F00E7A2C6 /* Base */,
-				9D061FB929E1628D00E7A2C6 /* Endpoints */,
-				9D061FBA29E1629000E7A2C6 /* Services */,
+				9D7FE9AE29E1D1B600599FA6 /* DataDownloader */,
+				9D7FE9AD29E1D18200599FA6 /* MovieBookService */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -249,6 +253,40 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9D7FE9AD29E1D18200599FA6 /* MovieBookService */ = {
+			isa = PBXGroup;
+			children = (
+				9D061FBA29E1629000E7A2C6 /* Services */,
+				9D061FB829E1625F00E7A2C6 /* Base */,
+				9D061FB929E1628D00E7A2C6 /* Endpoints */,
+			);
+			path = MovieBookService;
+			sourceTree = "<group>";
+		};
+		9D7FE9AE29E1D1B600599FA6 /* DataDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				9D7FE9AF29E1D1E200599FA6 /* DataDownloader.swift */,
+			);
+			path = DataDownloader;
+			sourceTree = "<group>";
+		};
+		9D8E764D29E339B70044AFE2 /* MBKit */ = {
+			isa = PBXGroup;
+			children = (
+				9D8E764E29E339C00044AFE2 /* Custom Views */,
+			);
+			path = MBKit;
+			sourceTree = "<group>";
+		};
+		9D8E764E29E339C00044AFE2 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D8E764F29E339E80044AFE2 /* MBFetchedImageView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,9 +359,11 @@
 			files = (
 				9D061FBE29E163CA00E7A2C6 /* RequestError.swift in Sources */,
 				9D061FCB29E1855E00E7A2C6 /* MainScreenViewModel.swift in Sources */,
+				9D7FE9B029E1D1E200599FA6 /* DataDownloader.swift in Sources */,
 				9D061F9D29E15D9B00E7A2C6 /* MainScreenView.swift in Sources */,
 				9D061F9B29E15D9B00E7A2C6 /* MovieBookApp.swift in Sources */,
 				9D061FC729E16EBB00E7A2C6 /* MoviesEndpoint.swift in Sources */,
+				9D8E765029E339E80044AFE2 /* MBFetchedImageView.swift in Sources */,
 				9D061FC529E16A5A00E7A2C6 /* HTTPClient.swift in Sources */,
 				9D061FC929E1807D00E7A2C6 /* MoviesService.swift in Sources */,
 				9D061FC329E167A800E7A2C6 /* Endpoint.swift in Sources */,
