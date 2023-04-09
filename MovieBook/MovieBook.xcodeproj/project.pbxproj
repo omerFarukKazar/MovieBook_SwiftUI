@@ -92,6 +92,7 @@
 		9D061FA929E15ED200E7A2C6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				9D8E764D29E339B70044AFE2 /* MBKit */,
 				9D061FCC29E1910D00E7A2C6 /* Extensions */,
 				9D061FA029E15D9C00E7A2C6 /* Preview Content */,
 				9D061FB129E15F4A00E7A2C6 /* Assets */,
@@ -270,6 +271,22 @@
 			path = DataDownloader;
 			sourceTree = "<group>";
 		};
+		9D8E764D29E339B70044AFE2 /* MBKit */ = {
+			isa = PBXGroup;
+			children = (
+				9D8E764E29E339C00044AFE2 /* Custom Views */,
+			);
+			path = MBKit;
+			sourceTree = "<group>";
+		};
+		9D8E764E29E339C00044AFE2 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D8E764F29E339E80044AFE2 /* MBFetchedImageView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -346,6 +363,7 @@
 				9D061F9D29E15D9B00E7A2C6 /* MainScreenView.swift in Sources */,
 				9D061F9B29E15D9B00E7A2C6 /* MovieBookApp.swift in Sources */,
 				9D061FC729E16EBB00E7A2C6 /* MoviesEndpoint.swift in Sources */,
+				9D8E765029E339E80044AFE2 /* MBFetchedImageView.swift in Sources */,
 				9D061FC529E16A5A00E7A2C6 /* HTTPClient.swift in Sources */,
 				9D061FC929E1807D00E7A2C6 /* MoviesService.swift in Sources */,
 				9D061FC329E167A800E7A2C6 /* Endpoint.swift in Sources */,
