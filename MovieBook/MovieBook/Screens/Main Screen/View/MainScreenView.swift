@@ -33,19 +33,23 @@ struct MainScreenView: View {
 
                 List(viewModel.searchResults,
                      id: \.imdbID) { movie in
-                    HStack {
-                        MBFetchedImageView(url: movie.poster)
-                            .frame(width: 100,
-                                   height: 150)
+                    NavigationLink(destination: {
+                        DetailScreenView(imdbID: movie.imdbID)
+                    }, label: {
+                        HStack {
+                            MBFetchedImageView(url: movie.poster)
+                                .frame(width: 100,
+                                       height: 150)
 
-                        VStack(alignment: .leading) {
-                            Text(movie.title)
-                                .foregroundColor(.blue)
-                            Text(movie.year)
-                                .foregroundColor(.orange)
+                            VStack(alignment: .leading) {
+                                Text(movie.title)
+                                    .foregroundColor(.blue)
+                                Text(movie.year)
+                                    .foregroundColor(.orange)
+                            }
                         }
-                    }
-                }
+                    })
+                } 
             }
             .navigationTitle(Text("MovieBook"))
             .navigationBarTitleDisplayMode(.inline)

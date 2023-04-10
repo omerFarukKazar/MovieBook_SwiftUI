@@ -16,19 +16,6 @@ class MainScreenViewModel: ObservableObject {
     init(service: MoviesServiceable) {
         self.service = service
     }
-
-    // TODO: Dummy method to test API Call. Remove or Update in the future.
-    func fetchMovie(by id: String) {
-        Task(priority: .background) {
-            let result = await service.fetchMovieByID(id)
-            switch result {
-            case .success(let movieResponse):
-                print(movieResponse)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
     
     func searchMovieBy(title: String) {
         Task(priority: .background) {
