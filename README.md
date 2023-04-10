@@ -14,7 +14,7 @@ git clone https://github.com/omerFarukKazar/MovieBook_SwiftUI.git
   * SwiftUI
     * Observable Object
     * Property Wrappers: @State, @Published, @ObservedObject
-    * HStack, VStack
+    * HStack, VStack, List, NavigationView, Image, Text, TextField
   
 ## Screen Recording
 
